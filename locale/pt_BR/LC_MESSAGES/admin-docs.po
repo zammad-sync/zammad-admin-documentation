@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Zammad\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-31 15:40+0200\n"
-"PO-Revision-Date: 2026-11-12 03:12+0000\n"
+"PO-Revision-Date: 2026-11-14 16:12+0000\n"
 "Last-Translator: Igor Costa <igor_sfx@yahoo.com.br>\n"
 "Language-Team: Portuguese (Brazil) <https://translations.zammad.org/projects/"
 "documentations/admin-documentation-pre-release/pt_BR/>\n"
@@ -21935,7 +21935,7 @@ msgstr ""
 
 #: ../misc/unprocessable-emails.rst:2
 msgid "Unprocessable Emails"
-msgstr ""
+msgstr "Emails não processáveis"
 
 #: ../misc/unprocessable-emails.rst:4
 msgid ""
@@ -21944,6 +21944,10 @@ msgid ""
 "email`` instead, so that the request stays visible and an agent can pick it "
 "up."
 msgstr ""
+"O Zammad transforma os emails recebidos em tickets. Quando um email não pode "
+"ser processado de forma alguma, o Zammad não o descarta. Em vez disso, cria "
+"um ticket com o título ``Unprocessable email``, para que a solicitação "
+"continue visível e um agente possa assumi-la."
 
 #: ../misc/unprocessable-emails.rst:9
 msgid ""
@@ -21951,12 +21955,13 @@ msgid ""
 "went wrong. That is what makes the ticket workable although Zammad could not "
 "read the email."
 msgstr ""
+"Esse ticket traz o email completo, como chegou, além de um log do que deu "
+"errado. É isso que torna o ticket tratável, embora o Zammad não tenha "
+"conseguido ler o email."
 
 #: ../misc/unprocessable-emails.rst:14
-#, fuzzy
-#| msgid "Ticket"
 msgid "Error Tickets"
-msgstr "Ticket"
+msgstr "Tickets de erro"
 
 #: ../misc/unprocessable-emails.rst:16
 msgid ""
@@ -21964,6 +21969,9 @@ msgid ""
 "created, so changing the default language later does not rename tickets that "
 "already exist."
 msgstr ""
+"O Zammad usa o título no idioma padrão vigente no momento em que o ticket é "
+"criado, então mudar o idioma padrão depois não renomeia os tickets que já "
+"existem."
 
 #: ../misc/unprocessable-emails.rst:20
 msgid ""
@@ -21972,30 +21980,38 @@ msgid ""
 "that channel has no group, Zammad uses the group that owns the recipient "
 "address of the email, and falls back to the first active group."
 msgstr ""
+"O ticket começa no estado definido como padrão para novos tickets e é "
+"atribuído ao grupo do canal de email que buscou a mensagem. Se esse canal "
+"não tiver grupo, o Zammad usa o grupo dono do endereço destinatário do email "
+"e, em último caso, o primeiro grupo ativo."
 
 #: ../misc/unprocessable-emails.rst:25
 msgid ""
 "The ticket carries a single internal note of the system account with two "
 "attachments:"
 msgstr ""
+"O ticket traz uma única nota interna da conta do sistema, com dois anexos:"
 
 #: ../misc/unprocessable-emails.rst:29
 msgid "``unprocessable_email.eml``"
-msgstr ""
+msgstr "``unprocessable_email.eml``"
 
 #: ../misc/unprocessable-emails.rst:29
 msgid "The raw email as it arrived."
-msgstr ""
+msgstr "O email original, como chegou."
 
 #: ../misc/unprocessable-emails.rst:33
 msgid "``processing_log.txt``"
-msgstr ""
+msgstr "``processing_log.txt``"
 
 #: ../misc/unprocessable-emails.rst:32
 msgid ""
 "When processing failed and what Zammad reported about the failure. Comparing "
 "it with the raw email shows whether the email or Zammad is at fault."
 msgstr ""
+"Quando o processamento falhou e o que o Zammad informou sobre a falha. "
+"Compará-lo com o email original mostra se o problema está no email ou no "
+"Zammad."
 
 #: ../misc/unprocessable-emails.rst:35
 msgid ""
@@ -22004,42 +22020,50 @@ msgid ""
 "``Download raw email`` and ``Download processing log`` buttons, which "
 "download exactly those two attachments."
 msgstr ""
+"A nota em si não é exibida. A conversa mostra um aviso informando que o "
+"email não pôde ser processado. O aviso também oferece os botões ``Download "
+"raw email`` e ``Download processing log``, que baixam exatamente esses dois "
+"anexos."
 
 #: ../misc/unprocessable-emails.rst:41
-#, fuzzy
-#| msgid "Common Errors"
 msgid "Common Reasons"
-msgstr "Erros comuns"
+msgstr "Motivos comuns"
 
 #: ../misc/unprocessable-emails.rst:43
 msgid ""
 "Zammad creates an error ticket whenever processing fails. The usual causes "
 "are:"
 msgstr ""
+"O Zammad cria um ticket de erro sempre que o processamento falha. As causas "
+"mais comuns são:"
 
 #: ../misc/unprocessable-emails.rst:47
 msgid "**Unreadable message**"
-msgstr ""
+msgstr "**Mensagem ilegível**"
 
 #: ../misc/unprocessable-emails.rst:46
 msgid ""
 "The email has no header field Zammad can read. This catches input that is "
 "not an email at all, for example plain text."
 msgstr ""
+"O email não tem nenhum campo de cabeçalho que o Zammad consiga ler. Isso "
+"pega entradas que nem são emails, por exemplo texto simples."
 
 #: ../misc/unprocessable-emails.rst:51
 msgid "**Processing exceeds the time limit**"
-msgstr ""
+msgstr "**O processamento excede o tempo limite**"
 
 #: ../misc/unprocessable-emails.rst:50
 msgid ""
 "Zammad stops processing a single email after three minutes. Big or unusual "
 "messages can exceed that."
 msgstr ""
+"O Zammad interrompe o processamento de um único email depois de três "
+"minutos. Mensagens grandes ou incomuns podem passar disso."
 
 #: ../misc/unprocessable-emails.rst:56
 msgid "**Unexpected processing error**"
-msgstr ""
+msgstr "**Erro inesperado de processamento**"
 
 #: ../misc/unprocessable-emails.rst:54
 msgid ""
@@ -22047,18 +22071,21 @@ msgid ""
 "names what Zammad reported, which is what to hand to Zammad support when the "
 "email itself is fine."
 msgstr ""
+"Qualquer outra falha enquanto o Zammad lê o email. O log de processamento "
+"cita o que o Zammad informou, e é isso que deve ser entregue ao suporte do "
+"Zammad quando o email em si está correto."
 
 #: ../misc/unprocessable-emails.rst:59
 msgid "Email Without a Usable Sender"
-msgstr ""
+msgstr "Email sem um remetente utilizável"
 
 #: ../misc/unprocessable-emails.rst:61
 msgid "A broken sender does not produce an error ticket."
-msgstr ""
+msgstr "Um remetente com problema não gera ticket de erro."
 
 #: ../misc/unprocessable-emails.rst:67
 msgid "**Malformed sender address**"
-msgstr ""
+msgstr "**Endereço de remetente malformado**"
 
 #: ../misc/unprocessable-emails.rst:64
 msgid ""
@@ -22067,40 +22094,47 @@ msgid ""
 "Nothing is sent to an address Zammad could not read, and later emails from "
 "the same sender land on that same customer."
 msgstr ""
+"O Zammad cria o cliente a partir do endereço que consegue ler: o endereço "
+"vira o login do cliente, e o cliente fica sem endereço de email. Nada é "
+"enviado a um endereço que o Zammad não conseguiu ler, e os próximos emails "
+"do mesmo remetente caem nesse mesmo cliente."
 
 #: ../misc/unprocessable-emails.rst:71
-#, fuzzy
-#| msgid "**contains all**"
 msgid "**No sender at all**"
-msgstr "**contains all**"
+msgstr "**Nenhum remetente**"
 
 #: ../misc/unprocessable-emails.rst:70
 msgid ""
 "The ticket is created for the system account. It has no customer, and the "
 "customer column of an overview shows ``-`` instead of a name."
 msgstr ""
+"O ticket é criado para a conta do sistema. Ele não tem cliente, e a coluna "
+"de cliente de uma visão geral mostra ``-`` em vez de um nome."
 
 #: ../misc/unprocessable-emails.rst:74
-#, fuzzy
-#| msgid "Handling of priorities"
 msgid "Handling an Error Ticket"
-msgstr "Tratamento de prioridades"
+msgstr "Tratando um ticket de erro"
 
 #: ../misc/unprocessable-emails.rst:76
 msgid "Read the raw email to see who wrote and what the request was."
-msgstr ""
+msgstr "Leia o email original para ver quem escreveu e qual era a solicitação."
 
 #: ../misc/unprocessable-emails.rst:77
 msgid ""
 "Use **Change customer** to attach the ticket to the right customer, also "
 "when it has none yet, and continue working it like any other ticket."
 msgstr ""
+"Use **Change customer** para vincular o ticket ao cliente correto, inclusive "
+"quando ele ainda não tem nenhum, e continue trabalhando nele como em "
+"qualquer outro ticket."
 
 #: ../misc/unprocessable-emails.rst:79
 msgid ""
 "If the email makes no sense at all, read the processing log, then close or "
 "delete the ticket."
 msgstr ""
+"Se o email não fizer sentido algum, leia o log de processamento e depois "
+"feche ou exclua o ticket."
 
 #: ../misc/unprocessable-emails.rst:81
 msgid ""
@@ -22108,10 +22142,13 @@ msgid ""
 "whose mail keeps failing cannot be caught by them. Block such a sender in "
 "the mailbox itself."
 msgstr ""
+"Os filtros de postmaster só rodam em emails que o Zammad conseguiu "
+"processar, então um remetente cujos emails continuam falhando não pode ser "
+"barrado por eles. Bloqueie esse remetente na própria caixa de correio."
 
 #: ../misc/unprocessable-emails.rst:86
 msgid "Reprocessing a Repaired Email"
-msgstr ""
+msgstr "Reprocessando um email reparado"
 
 #: ../misc/unprocessable-emails.rst:88
 msgid ""
@@ -22119,6 +22156,9 @@ msgid ""
 "emails only work on records from before 7.3, and an error ticket carries no "
 "such record."
 msgstr ""
+"O Zammad não tem como reprocessar um ticket de erro. As tarefas rake para "
+"emails com falha só funcionam com registros de antes da versão 7.3, e um "
+"ticket de erro não tem esse registro."
 
 #: ../misc/unprocessable-emails.rst:92
 msgid ""
@@ -22129,6 +22169,12 @@ msgid ""
 "that is still broken creates another error ticket. The first one stays "
 "behind, to be closed, merged or deleted."
 msgstr ""
+"Uma cópia reparada ainda pode virar um ticket: baixe o email original, "
+"corrija o que o tornava ilegível e envie o arquivo de volta ao Zammad com o "
+"comando de console da página :doc:`/channels/email/advanced/fetchmail`. O "
+"Zammad o processa como um email que chegou na caixa de correio, o que "
+"significa que uma cópia ainda com problema cria outro ticket de erro. O "
+"primeiro continua lá, para ser fechado, mesclado ou excluído."
 
 #: ../misc/unprocessable-emails.rst:100 ../system/monitoring.rst:2
 msgid "Monitoring"
@@ -22143,6 +22189,12 @@ msgid ""
 "commands.html>` page describes how to reprocess such a record, which turns "
 "it into a ticket."
 msgstr ""
+"Emails não processáveis não aparecem mais no monitoramento. Até a versão "
+"7.3, o Zammad os registrava como emails com falha e informava a quantidade "
+"deles. Registros de antes da atualização continuam existindo e sendo "
+"informados até serem removidos. A página :docs:`Administração via console </"
+"admin/console/other-useful-commands.html>` descreve como reprocessar esse "
+"tipo de registro, o que o transforma em um ticket."
 
 #: ../misc/variables.rst:4
 msgid ""
@@ -29536,16 +29588,6 @@ msgid "API"
 msgstr "API"
 
 #: ../system/api.rst:4
-#, fuzzy
-#| msgid ""
-#| "Zammad comes with a REST API that allows external applications and "
-#| "scripts to read and write data of your Zammad instance without using the "
-#| "web interface. The API endpoints themselves are always available, the "
-#| "settings on this tab only decide how clients authenticate. The tab "
-#| "*System > API* has two jobs: it decides which authentication methods "
-#| "Zammad accepts for API requests and it manages the applications that use "
-#| "Zammad as an OAuth provider. The ``admin.api`` permission is required to "
-#| "access the tab."
 msgid ""
 "Zammad comes with a REST API that allows external applications and scripts "
 "to read and write data of your Zammad instance without using the web "
@@ -29556,10 +29598,8 @@ msgstr ""
 "O Zammad vem com uma API REST que permite que aplicativos e scripts externos "
 "leiam e gravem dados da sua instância do Zammad sem usar a interface web. Os "
 "próprios endpoints da API estão sempre disponíveis; as configurações desta "
-"aba decidem apenas como os clientes se autenticam. A aba *System > API* tem "
-"duas funções: decidir quais métodos de autenticação o Zammad aceita para "
-"solicitações de API e gerenciar os aplicativos que usam o Zammad como "
-"provedor OAuth. A permissão ``admin.api`` é necessária para acessar a aba."
+"página decidem apenas como os clientes se autenticam e se o servidor MCP "
+"responde. A permissão ``admin.api`` é necessária para acessar a página."
 
 #: ../system/api.rst:10
 msgid ""
@@ -29572,20 +29612,16 @@ msgstr ""
 "da nossa documentação do sistema."
 
 #: ../system/api.rst:14
-#, fuzzy
-#| msgid ""
-#| "Zammad supports three ways for a client to authenticate against the API. "
-#| "The first two are toggles on this page, the third one comes with the "
-#| "OAuth applications further down:"
 msgid ""
 "Zammad supports three ways for a client to authenticate against the REST "
 "API. This overview only names them, the settings themselves are organized "
 "differently: the first two methods are toggles on the *Token access* tab, "
 "the third one belongs to the OAuth applications on the *OAuth* tab:"
 msgstr ""
-"O Zammad suporta três formas de um cliente se autenticar na API. As duas "
-"primeiras são chaves nesta página; a terceira vem com os aplicativos OAuth "
-"mais abaixo:"
+"O Zammad suporta três formas de um cliente se autenticar na API REST. Esta "
+"visão geral apenas as cita; as configurações em si são organizadas de outra "
+"forma: os dois primeiros métodos são chaves na aba *Token access*, e o "
+"terceiro pertence aos aplicativos OAuth na aba *OAuth*:"
 
 #: ../system/api.rst:22
 msgid "Personal access token"
@@ -29620,21 +29656,14 @@ msgid "OAuth2 access token"
 msgstr "Token de acesso OAuth2"
 
 #: ../system/api.rst:30
-#, fuzzy
-#| msgid ""
-#| "A token an application receives for a user after the user authorized the "
-#| "application. It is managed with the applications further down on this "
-#| "page. Unlike the other two methods it has no toggle and cannot be "
-#| "switched off."
 msgid ""
 "A token an application receives for a user after the user authorized the "
 "application. It is managed with the applications on the *OAuth* tab. Unlike "
 "the other two methods it has no toggle and cannot be switched off."
 msgstr ""
 "Um token que um aplicativo recebe para um usuário depois que o usuário "
-"autoriza o aplicativo. Ele é gerenciado com os aplicativos mais abaixo nesta "
-"página. Diferente dos outros dois métodos, não tem chave e não pode ser "
-"desativado."
+"autoriza o aplicativo. Ele é gerenciado com os aplicativos na aba *OAuth*. "
+"Diferente dos outros dois métodos, não tem chave e não pode ser desativado."
 
 #: ../system/api.rst:35 ../system/api.rst:44
 msgid "Token Access"
@@ -29646,6 +29675,9 @@ msgid ""
 "described in the following three sections: direct authentication of the REST "
 "API and the MCP server."
 msgstr ""
+"A primeira aba da página se chama *Token access*. Ela reúne as chaves "
+"descritas nas três seções a seguir: a autenticação direta na API REST e o "
+"servidor MCP."
 
 #: ../system/api.rst:46
 msgid ""
@@ -29758,10 +29790,8 @@ msgstr ""
 "calendário do perfil e são orientados a falar com o administrador."
 
 #: ../system/api.rst:104
-#, fuzzy
-#| msgid "Video Servers"
 msgid "MCP Server"
-msgstr "Servidores de vídeo"
+msgstr "Servidor MCP"
 
 #: ../system/api.rst:106
 msgid ""
@@ -29771,6 +29801,11 @@ msgid ""
 "Nothing has to be installed or run in addition, the server is part of every "
 "installation."
 msgstr ""
+"O Zammad responde ao *Model Context Protocol* (MCP) no seu próprio servidor, "
+"ao lado da API REST. Por meio dele, um cliente de IA (um aplicativo de chat "
+"ou uma ferramenta de programação, por exemplo) lê, encontra, atualiza e cria "
+"tickets no seu Zammad. Nada precisa ser instalado ou executado além disso: o "
+"servidor faz parte de toda instalação."
 
 #: ../system/api.rst:112
 msgid ""
@@ -29778,6 +29813,9 @@ msgid ""
 "is off by default. While it is off, Zammad refuses every request to the "
 "server, whatever token the request carries."
 msgstr ""
+"A chave **MCP server** ativa o servidor para toda a instalação. Ela vem "
+"desativada por padrão. Enquanto estiver desativada, o Zammad recusa toda "
+"requisição ao servidor, seja qual for o token que ela traga."
 
 #: ../system/api.rst:116
 msgid ""
@@ -29788,21 +29826,24 @@ msgid ""
 "permissions, such as customers, get no tools. See the :user-docs:`user "
 "documentation </extras/mcp-server.html>` for how a user connects a client."
 msgstr ""
+"Os clientes se autenticam com tokens de acesso pessoal, então o servidor só "
+"funciona enquanto o :ref:`Token Access <system-api-token-access>` estiver "
+"ativado. Um cliente pode fazer exatamente o que o token e o dono dele podem "
+"fazer, nada além disso: toda ferramenta exige a permissão ``ticket.agent``. "
+"Usuários sem permissão de agente, como clientes, não recebem nenhuma "
+"ferramenta. Veja a :user-docs:`documentação do usuário </extras/mcp-"
+"server.html>` para saber como um usuário conecta um cliente."
 
 #: ../system/api.rst:123
-#, fuzzy
-#| msgid ""
-#| "The example shown next to the toggle uses the **Fully Qualified Domain "
-#| "Name** and the **HTTP type** from Zammad's :doc:`Base settings </settings/"
-#| "system/base>`."
 msgid ""
 "When the toggle is on, the page shows the address of the server and an "
 "example for connecting a client. Both use the **Fully Qualified Domain "
 "Name** and the **HTTP type** from Zammad's :doc:`Base settings </settings/"
 "system/base>`."
 msgstr ""
-"O exemplo mostrado ao lado da chave usa o **Fully Qualified Domain Name** e "
-"o **HTTP type** das :doc:`configurações básicas </settings/system/base>` do "
+"Com a chave ativada, a página mostra o endereço do servidor e um exemplo "
+"para conectar um cliente. Ambos usam o **Fully Qualified Domain Name** e o "
+"**HTTP type** das :doc:`configurações básicas </settings/system/base>` do "
 "Zammad."
 
 #: ../system/api.rst:127
@@ -29813,6 +29854,11 @@ msgid ""
 "fail, and browser requests from other origins are refused to protect the "
 "server against DNS rebinding."
 msgstr ""
+"O Zammad só responde quando uma requisição se dirige ao **Fully Qualified "
+"Domain Name**, ao **Alternative fully qualified domain name** ou a um "
+"endereço de loopback (``localhost``, ``127.0.0.1``, ``::1``). Requisições em "
+"outro endereço falham, e requisições de navegador vindas de outras origens "
+"são recusadas, para proteger o servidor contra DNS rebinding."
 
 #: ../system/api.rst:133
 msgid ""
@@ -29823,6 +29869,12 @@ msgid ""
 "approval sends nothing, and the client can then offer to save the text as "
 "the ticket's shared draft."
 msgstr ""
+"Quando o cliente consegue exibir, o Zammad pede que o usuário aprove uma "
+"mensagem antes que ela chegue a um cliente. O pedido mostra o texto "
+"completo, os destinatários e a visibilidade (um form elicitation, a partir "
+"da revisão 2026-07-28 do MCP), e o Zammad só envia depois que o usuário "
+"aceita ali. Uma aprovação recusada não envia nada, e o cliente pode então "
+"oferecer salvar o texto como rascunho compartilhado do ticket."
 
 #: ../system/api.rst:139
 msgid ""
@@ -29835,6 +29887,15 @@ msgid ""
 "enabled in the client, because a client that runs them without a prompt "
 "sends a message without any further question."
 msgstr ""
+"Um cliente que não consegue exibir o formulário recorre à sua própria "
+"aprovação da chamada de ferramenta, assim como uma alteração pela API REST "
+"com o mesmo token é feita sem aprovação adicional. Em duas alterações, o "
+"\"sim\" do usuário na conversa substitui o formulário: o Zammad substitui um "
+"rascunho compartilhado que já existe e fecha um ticket com checklist "
+"incompleto somente depois que o cliente perguntou e o usuário concordou. "
+"Mantenha ativada no cliente a aprovação de chamadas de ferramenta, porque um "
+"cliente que as executa sem perguntar envia uma mensagem sem nenhuma "
+"confirmação adicional."
 
 #: ../system/api.rst:147
 msgid ""
@@ -29843,22 +29904,17 @@ msgid ""
 "the access of each tool and the limits that apply, is part of the system "
 "documentation: :docs:`MCP tool reference </api/mcp.html>`."
 msgstr ""
+"O cliente trabalha com ferramentas para ler e gravar tickets, para pesquisar "
+"e para rascunhos compartilhados e respostas da base de conhecimento. A lista "
+"completa, com o acesso de cada ferramenta e os limites que se aplicam, faz "
+"parte da documentação do sistema: :docs:`referência de ferramentas MCP </api/"
+"mcp.html>`."
 
 #: ../system/api.rst:153
-#, fuzzy
-#| msgid "OAuth Setup"
 msgid "OAuth"
-msgstr "Configurar"
+msgstr "OAuth"
 
 #: ../system/api.rst:155
-#, fuzzy
-#| msgid ""
-#| "The lower part of the page manages OAuth applications. An OAuth "
-#| "application is any external software that wants to work with your Zammad "
-#| "data on behalf of a user, e.g. a reporting tool or an integration you "
-#| "develop yourself. Zammad acts as OAuth provider for it: the user logs "
-#| "into Zammad once and authorizes the application, which then works with "
-#| "the REST API as that user and with their permissions."
 msgid ""
 "The second tab of the page is named *OAuth*. An OAuth application is any "
 "external software that wants to work with your Zammad data on behalf of a "
@@ -29867,12 +29923,12 @@ msgid ""
 "the application, which then works with the REST API as that user and with "
 "their permissions."
 msgstr ""
-"A parte inferior da página gerencia os aplicativos OAuth. Um aplicativo "
-"OAuth é qualquer software externo que quer trabalhar com os dados do seu "
-"Zammad em nome de um usuário, por exemplo uma ferramenta de relatórios ou "
-"uma integração que você mesmo desenvolve. O Zammad atua como provedor OAuth "
-"para ele: o usuário faz login no Zammad uma vez e autoriza o aplicativo, que "
-"então trabalha com a API REST como esse usuário e com as permissões dele."
+"A segunda aba da página se chama *OAuth*. Um aplicativo OAuth é qualquer "
+"software externo que quer trabalhar com os dados do seu Zammad em nome de um "
+"usuário, por exemplo uma ferramenta de relatórios ou uma integração que você "
+"mesmo desenvolve. O Zammad atua como provedor OAuth para ele: o usuário faz "
+"login no Zammad uma vez e autoriza o aplicativo, que então trabalha com a "
+"API REST como esse usuário e com as permissões dele."
 
 #: ../system/api.rst:162
 msgid ""
@@ -29947,12 +30003,6 @@ msgstr ""
 "de usuário. O Zammad o exibe em uma caixa de diálogo."
 
 #: ../system/api.rst:192
-#, fuzzy
-#| msgid ""
-#| "Creating an application does not grant it any access. A user still has to "
-#| "authorize the application once, or you generate an access token with the "
-#| "**Token** action. The bottom of the page lists the two URLs of your "
-#| "instance that an application uses during the authorization:"
 msgid ""
 "Creating an application does not grant it any access. A user still has to "
 "authorize the application once, or you generate an access token with the "
@@ -29960,20 +30010,19 @@ msgid ""
 msgstr ""
 "Criar um aplicativo não dá nenhum acesso a ele. Um usuário ainda precisa "
 "autorizar o aplicativo uma vez, ou você gera um token de acesso com a ação "
-"**Token**. A parte inferior da página lista as duas URLs da sua instância "
-"que um aplicativo usa durante a autorização:"
+"**Token**."
 
 #: ../system/api.rst:197
-#, fuzzy
-#| msgid "``Authorization``"
 msgid "Authorization URLs"
-msgstr "``Authorization``"
+msgstr "URLs de autorização"
 
 #: ../system/api.rst:199
 msgid ""
 "The bottom of the tab lists the two URLs of your instance that an "
 "application uses during the authorization:"
 msgstr ""
+"A parte inferior da aba lista as duas URLs da sua instância que um "
+"aplicativo usa durante a autorização:"
 
 #: ../system/api.rst:202
 msgid ""
@@ -36224,13 +36273,6 @@ msgstr ""
 "providências para corrigir possíveis problemas diretamente."
 
 #: ../system/monitoring.rst:11
-#, fuzzy
-#| msgid ""
-#| "On the monitoring page, you can see the current health state of Zammad "
-#| "under **Current Status** at the bottom. This can be useful if you want to "
-#| "have a look if everything is up and running. As an example, you could "
-#| "have a look in the monitoring when you assume that some emails aren't "
-#| "processed from Zammad."
 msgid ""
 "On the monitoring page, you can see the current health state of Zammad under "
 "**Current Status** at the bottom. This can be useful if you want to have a "
@@ -36241,10 +36283,12 @@ msgid ""
 "see :doc:`/misc/unprocessable-emails`."
 msgstr ""
 "Na página de monitoramento, você pode ver o estado de saúde atual do Zammad "
-"em **Status Atual**, na parte inferior. Isso pode ser útil se você quiser "
-"verificar se está tudo funcionando normalmente. Por exemplo, você pode dar "
-"uma olhada no monitoramento quando suspeitar que alguns emails não estão "
-"sendo processados pelo Zammad."
+"em **Current Status**, na parte inferior. Isso pode ser útil se você quiser "
+"verificar se está tudo funcionando normalmente. Por exemplo, o monitoramento "
+"informa um canal de email que não consegue se conectar ao servidor de email, "
+"ou um que não busca emails há mais de uma hora. Emails que não podem ser "
+"processados não fazem parte dele. Em vez disso, o Zammad cria um ticket com "
+"o título ``Unprocessable email``; veja :doc:`/misc/unprocessable-emails`."
 
 #: ../system/monitoring.rst:20
 msgid "Monitoring API"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Zammad Admin Documentation pre-release\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-31 15:40+0200\n"
-"PO-Revision-Date: 2026-11-12 03:12+0000\n"
+"PO-Revision-Date: 2026-11-14 16:12+0000\n"
 "Last-Translator: Dusan Vuckovic <dv@zammad.com>\n"
 "Language-Team: Serbian <https://translations.zammad.org/projects/"
 "documentations/admin-documentation-pre-release/sr/>\n"
@@ -971,7 +971,7 @@ msgstr ""
 
 #: ../ai/provider.rst:82 ../system/api.rst:190
 msgid "Token"
-msgstr "API кључ"
+msgstr "Кључ"
 
 #: ../ai/provider.rst:81
 msgid ""
@@ -21517,7 +21517,7 @@ msgstr ""
 
 #: ../misc/unprocessable-emails.rst:2
 msgid "Unprocessable Emails"
-msgstr ""
+msgstr "Имејл поруке које се не могу обрадити"
 
 #: ../misc/unprocessable-emails.rst:4
 msgid ""
@@ -21526,6 +21526,10 @@ msgid ""
 "email`` instead, so that the request stays visible and an agent can pick it "
 "up."
 msgstr ""
+"Zammad претвара долазне имејл поруке у тикете. Када имејл порука уопште не "
+"може да се обради, Zammad је не одбацује. Уместо тога отвара тикет са "
+"насловом ``Имејл порука која се не може обрадити``, тако да захтев остаје "
+"видљив и оператер може да га преузме."
 
 #: ../misc/unprocessable-emails.rst:9
 msgid ""
@@ -21533,12 +21537,13 @@ msgid ""
 "went wrong. That is what makes the ticket workable although Zammad could not "
 "read the email."
 msgstr ""
+"Такав тикет садржи целу имејл поруку онако како је стигла, као и дневник "
+"онога што није успело. Управо због тога се са тикетом може радити иако "
+"Zammad није могао да прочита имејл поруку."
 
 #: ../misc/unprocessable-emails.rst:14
-#, fuzzy
-#| msgid "Ticket"
 msgid "Error Tickets"
-msgstr "Тикет"
+msgstr "Тикети о грешкама"
 
 #: ../misc/unprocessable-emails.rst:16
 msgid ""
@@ -21546,6 +21551,9 @@ msgid ""
 "created, so changing the default language later does not rename tickets that "
 "already exist."
 msgstr ""
+"Zammad узима наслов на подразумеваном језику који важи у тренутку отварања "
+"тикета, па каснија промена подразумеваног језика не мења наслове тикета који "
+"већ постоје."
 
 #: ../misc/unprocessable-emails.rst:20
 msgid ""
@@ -21554,30 +21562,36 @@ msgid ""
 "that channel has no group, Zammad uses the group that owns the recipient "
 "address of the email, and falls back to the first active group."
 msgstr ""
+"Тикет почиње у стању које је подешено као подразумевано за нове тикете и "
+"додељује се групи имејл канала који је преузео поруку. Ако тај канал нема "
+"групу, Zammad користи групу којој припада адреса примаоца имејл поруке, а у "
+"крајњем случају прву активну групу."
 
 #: ../misc/unprocessable-emails.rst:25
 msgid ""
 "The ticket carries a single internal note of the system account with two "
 "attachments:"
-msgstr ""
+msgstr "Тикет садржи једну интерну напомену системског налога са два прилога:"
 
 #: ../misc/unprocessable-emails.rst:29
 msgid "``unprocessable_email.eml``"
-msgstr ""
+msgstr "``unprocessable_email.eml``"
 
 #: ../misc/unprocessable-emails.rst:29
 msgid "The raw email as it arrived."
-msgstr ""
+msgstr "Изворни имејл онако како је стигао."
 
 #: ../misc/unprocessable-emails.rst:33
 msgid "``processing_log.txt``"
-msgstr ""
+msgstr "``processing_log.txt``"
 
 #: ../misc/unprocessable-emails.rst:32
 msgid ""
 "When processing failed and what Zammad reported about the failure. Comparing "
 "it with the raw email shows whether the email or Zammad is at fault."
 msgstr ""
+"Када обрада није успела и шта је Zammad пријавио о грешци. Поређење са "
+"изворним имејлом показује да ли је проблем у имејл поруци или у Zammad-у."
 
 #: ../misc/unprocessable-emails.rst:35
 msgid ""
@@ -21586,42 +21600,49 @@ msgid ""
 "``Download raw email`` and ``Download processing log`` buttons, which "
 "download exactly those two attachments."
 msgstr ""
+"Сама напомена се не приказује. Уместо ње, разговор приказује упозорење да "
+"имејл порука није могла да се обради. Упозорење нуди и дугмад ``Преузми "
+"изворни имејл`` и ``Преузми дневник обраде``, која преузимају управо та два "
+"прилога."
 
 #: ../misc/unprocessable-emails.rst:41
-#, fuzzy
-#| msgid "Common Errors"
 msgid "Common Reasons"
-msgstr "Уобичајене грешке"
+msgstr "Уобичајени узроци"
 
 #: ../misc/unprocessable-emails.rst:43
 msgid ""
 "Zammad creates an error ticket whenever processing fails. The usual causes "
 "are:"
 msgstr ""
+"Zammad отвара тикет о грешци кад год обрада не успе. Уобичајени узроци су:"
 
 #: ../misc/unprocessable-emails.rst:47
 msgid "**Unreadable message**"
-msgstr ""
+msgstr "**Нечитљива порука**"
 
 #: ../misc/unprocessable-emails.rst:46
 msgid ""
 "The email has no header field Zammad can read. This catches input that is "
 "not an email at all, for example plain text."
 msgstr ""
+"Имејл порука нема ниједно поље заглавља које Zammad може да прочита. Тако се "
+"хвата унос који уопште није имејл порука, на пример обичан текст."
 
 #: ../misc/unprocessable-emails.rst:51
 msgid "**Processing exceeds the time limit**"
-msgstr ""
+msgstr "**Обрада прекорачује временско ограничење**"
 
 #: ../misc/unprocessable-emails.rst:50
 msgid ""
 "Zammad stops processing a single email after three minutes. Big or unusual "
 "messages can exceed that."
 msgstr ""
+"Zammad прекида обраду појединачне имејл поруке после три минута. Велике или "
+"необичне поруке могу да прекораче то ограничење."
 
 #: ../misc/unprocessable-emails.rst:56
 msgid "**Unexpected processing error**"
-msgstr ""
+msgstr "**Неочекивана грешка при обради**"
 
 #: ../misc/unprocessable-emails.rst:54
 msgid ""
@@ -21629,18 +21650,21 @@ msgid ""
 "names what Zammad reported, which is what to hand to Zammad support when the "
 "email itself is fine."
 msgstr ""
+"Било шта друго што не успе док Zammad чита имејл поруку. Дневник обраде "
+"наводи шта је Zammad пријавио, а то је оно што треба проследити Zammad "
+"подршци када је сама имејл порука исправна."
 
 #: ../misc/unprocessable-emails.rst:59
 msgid "Email Without a Usable Sender"
-msgstr ""
+msgstr "Имејл порука без употребљивог пошиљаоца"
 
 #: ../misc/unprocessable-emails.rst:61
 msgid "A broken sender does not produce an error ticket."
-msgstr ""
+msgstr "Неисправан пошиљалац не доводи до отварања тикета о грешци."
 
 #: ../misc/unprocessable-emails.rst:67
 msgid "**Malformed sender address**"
-msgstr ""
+msgstr "**Неправилно формирана адреса пошиљаоца**"
 
 #: ../misc/unprocessable-emails.rst:64
 msgid ""
@@ -21649,40 +21673,48 @@ msgid ""
 "Nothing is sent to an address Zammad could not read, and later emails from "
 "the same sender land on that same customer."
 msgstr ""
+"Zammad додаје клијента на основу адресе коју може да прочита: адреса постаје "
+"корисничко име клијента, а клијент не добија имејл адресу. Ништа се не шаље "
+"на адресу коју Zammad није могао да прочита, а касније имејл поруке истог "
+"пошиљаоца стижу код тог истог клијента."
 
 #: ../misc/unprocessable-emails.rst:71
-#, fuzzy
-#| msgid "**contains all**"
 msgid "**No sender at all**"
-msgstr "**садржи све**"
+msgstr "**Пошиљалац потпуно недостаје**"
 
 #: ../misc/unprocessable-emails.rst:70
 msgid ""
 "The ticket is created for the system account. It has no customer, and the "
 "customer column of an overview shows ``-`` instead of a name."
 msgstr ""
+"Тикет се отвара за системски налог. Нема клијента, а колона клијента у "
+"прегледу приказује ``-`` уместо имена."
 
 #: ../misc/unprocessable-emails.rst:74
-#, fuzzy
-#| msgid "Handling of priorities"
 msgid "Handling an Error Ticket"
-msgstr "Руковање приоритетима"
+msgstr "Поступање са тикетом о грешци"
 
 #: ../misc/unprocessable-emails.rst:76
 msgid "Read the raw email to see who wrote and what the request was."
 msgstr ""
+"Прочитајте изворни имејл да бисте видели ко је писао и какав је био захтев."
 
 #: ../misc/unprocessable-emails.rst:77
 msgid ""
 "Use **Change customer** to attach the ticket to the right customer, also "
 "when it has none yet, and continue working it like any other ticket."
 msgstr ""
+"Помоћу **Измени клијента** повежите тикет са одговарајућим клијентом, и онда "
+"када тикет још нема клијента, па наставите да радите на њему као на сваком "
+"другом тикету."
 
 #: ../misc/unprocessable-emails.rst:79
 msgid ""
 "If the email makes no sense at all, read the processing log, then close or "
 "delete the ticket."
 msgstr ""
+"Ако имејл порука уопште нема смисла, прочитајте дневник обраде, а затим "
+"затворите или избришите тикет."
 
 #: ../misc/unprocessable-emails.rst:81
 msgid ""
@@ -21690,10 +21722,13 @@ msgid ""
 "whose mail keeps failing cannot be caught by them. Block such a sender in "
 "the mailbox itself."
 msgstr ""
+"Postmaster филтери се примењују само на имејл поруке које је Zammad могао да "
+"обради, па пошиљалац чије поруке стално не успевају не може њима да се "
+"ухвати. Блокирајте таквог пошиљаоца у самом поштанском сандучету."
 
 #: ../misc/unprocessable-emails.rst:86
 msgid "Reprocessing a Repaired Email"
-msgstr ""
+msgstr "Поновна обрада поправљене имејл поруке"
 
 #: ../misc/unprocessable-emails.rst:88
 msgid ""
@@ -21701,6 +21736,9 @@ msgid ""
 "emails only work on records from before 7.3, and an error ticket carries no "
 "such record."
 msgstr ""
+"Zammad нема начин да поново обради тикет о грешци. Rake задаци за неуспешне "
+"имејл поруке раде само са записима из времена пре верзије 7.3, а тикет о "
+"грешци не садржи такав запис."
 
 #: ../misc/unprocessable-emails.rst:92
 msgid ""
@@ -21711,6 +21749,12 @@ msgid ""
 "that is still broken creates another error ticket. The first one stays "
 "behind, to be closed, merged or deleted."
 msgstr ""
+"Поправљена копија ипак може да постане тикет: преузмите изворни имејл, "
+"исправите оно што га је учинило нечитљивим и вратите датотеку у Zammad "
+"помоћу конзолне команде са странице :doc:`/channels/email/advanced/"
+"fetchmail`. Zammad је обрађује као поруку која стиже у поштанско сандуче, "
+"што значи да копија која је и даље неисправна отвара нови тикет о грешци. "
+"Први тикет остаје и треба га затворити, спојити или избрисати."
 
 #: ../misc/unprocessable-emails.rst:100 ../system/monitoring.rst:2
 msgid "Monitoring"
@@ -21725,6 +21769,12 @@ msgid ""
 "commands.html>` page describes how to reprocess such a record, which turns "
 "it into a ticket."
 msgstr ""
+"Имејл поруке које не могу да се обраде више се не приказују у надгледању. "
+"Zammad их је до верзије 7.3 евидентирао као неуспешне имејл поруке и "
+"пријављивао њихов број. Записи из времена пре ажурирања остају и пријављују "
+"се све док се не уклоне. Страница :docs:`Администрација путем конзоле </"
+"admin/console/other-useful-commands.html>` описује како се такав запис "
+"поново обрађује, чиме се претвара у тикет."
 
 #: ../misc/variables.rst:4
 msgid ""
@@ -29081,16 +29131,6 @@ msgid "API"
 msgstr "API"
 
 #: ../system/api.rst:4
-#, fuzzy
-#| msgid ""
-#| "Zammad comes with a REST API that allows external applications and "
-#| "scripts to read and write data of your Zammad instance without using the "
-#| "web interface. The API endpoints themselves are always available, the "
-#| "settings on this tab only decide how clients authenticate. The tab "
-#| "*System > API* has two jobs: it decides which authentication methods "
-#| "Zammad accepts for API requests and it manages the applications that use "
-#| "Zammad as an OAuth provider. The ``admin.api`` permission is required to "
-#| "access the tab."
 msgid ""
 "Zammad comes with a REST API that allows external applications and scripts "
 "to read and write data of your Zammad instance without using the web "
@@ -29100,11 +29140,9 @@ msgid ""
 msgstr ""
 "Zammad долази са REST API-јем који омогућава спољним апликацијама и "
 "скриптама да читају и уписују податке ваше Zammad инстанце без коришћења веб "
-"интерфејса. Саме API путање су увек доступне, а подешавања на овом екрану "
-"само одређују како се клијенти аутентификују. Екран *Систем > API* има две "
-"улоге: одређује које методе аутентификације Zammad прихвата за API захтеве и "
-"управља апликацијама које користе Zammad као OAuth провајдера. За приступ "
-"овом екранз потребна је дозвола ``admin.api``."
+"интерфејса. Саме API путање су увек доступне, а подешавања на овој страници "
+"само одређују како се клијенти аутентификују и да ли MCP сервер одговара. За "
+"приступ овој страници потребна је дозвола ``admin.api``."
 
 #: ../system/api.rst:10
 msgid ""
@@ -29117,20 +29155,16 @@ msgstr ""
 "документације."
 
 #: ../system/api.rst:14
-#, fuzzy
-#| msgid ""
-#| "Zammad supports three ways for a client to authenticate against the API. "
-#| "The first two are toggles on this page, the third one comes with the "
-#| "OAuth applications further down:"
 msgid ""
 "Zammad supports three ways for a client to authenticate against the REST "
 "API. This overview only names them, the settings themselves are organized "
 "differently: the first two methods are toggles on the *Token access* tab, "
 "the third one belongs to the OAuth applications on the *OAuth* tab:"
 msgstr ""
-"Zammad подржава три начина за аутентификацију API клијента. Прва два су "
-"доступне као прекидачи на овој страници, а трећи начин је омогућен преко "
-"OAuth апликација даље доле:"
+"Zammad подржава три начина на које се клијент може аутентификовати према "
+"REST API-ју. Овај преглед их само наводи, а сама подешавања су организована "
+"другачије: прва два начина су прекидачи на језичку *Приступ путем кључа*, а "
+"трећи припада OAuth апликацијама на језичку *OAuth*:"
 
 #: ../system/api.rst:22
 msgid "Personal access token"
@@ -29165,20 +29199,14 @@ msgid "OAuth2 access token"
 msgstr "OAuth2 приступни кључ"
 
 #: ../system/api.rst:30
-#, fuzzy
-#| msgid ""
-#| "A token an application receives for a user after the user authorized the "
-#| "application. It is managed with the applications further down on this "
-#| "page. Unlike the other two methods it has no toggle and cannot be "
-#| "switched off."
 msgid ""
 "A token an application receives for a user after the user authorized the "
 "application. It is managed with the applications on the *OAuth* tab. Unlike "
 "the other two methods it has no toggle and cannot be switched off."
 msgstr ""
 "Кључ који апликација добија за корисника након што корисник ауторизује "
-"апликацију. Управља преко апликација даље на овој страници. За разлику од "
-"остале две методе, нема прекидач и не може се искључити."
+"апликацију. Њиме се управља преко апликација на језичку *OAuth*. За разлику "
+"од остале две методе, нема прекидач и не може се искључити."
 
 #: ../system/api.rst:35 ../system/api.rst:44
 msgid "Token Access"
@@ -29190,6 +29218,9 @@ msgid ""
 "described in the following three sections: direct authentication of the REST "
 "API and the MCP server."
 msgstr ""
+"Први језичак странице зове се *Приступ путем кључа*. На њему су прекидачи "
+"описани у следећа три одељка: директна аутентификација за REST API и MCP "
+"сервер."
 
 #: ../system/api.rst:46
 msgid ""
@@ -29299,10 +29330,8 @@ msgstr ""
 "преусмерени на администратора."
 
 #: ../system/api.rst:104
-#, fuzzy
-#| msgid "Video Servers"
 msgid "MCP Server"
-msgstr "Видео сервери"
+msgstr "MCP сервер"
 
 #: ../system/api.rst:106
 msgid ""
@@ -29312,6 +29341,11 @@ msgid ""
 "Nothing has to be installed or run in addition, the server is part of every "
 "installation."
 msgstr ""
+"Zammad одговара на *Model Context Protocol* (MCP) на сопственом серверу, "
+"поред REST API-ја. Преко њега AI клијент (на пример, апликација за ћаскање "
+"или алат за програмирање) чита, проналази, мења и отвара тикете у вашем "
+"Zammad-у. Ништа не мора додатно да се инсталира нити покреће, сервер је део "
+"сваке инсталације."
 
 #: ../system/api.rst:112
 msgid ""
@@ -29319,6 +29353,9 @@ msgid ""
 "is off by default. While it is off, Zammad refuses every request to the "
 "server, whatever token the request carries."
 msgstr ""
+"Прекидач **MCP сервер** укључује сервер за целу инсталацију. Подразумевано "
+"је искључен. Док је искључен, Zammad одбија сваки захтев упућен серверу, без "
+"обзира на то који кључ захтев носи."
 
 #: ../system/api.rst:116
 msgid ""
@@ -29329,22 +29366,25 @@ msgid ""
 "permissions, such as customers, get no tools. See the :user-docs:`user "
 "documentation </extras/mcp-server.html>` for how a user connects a client."
 msgstr ""
+"Клијенти се аутентификују личним приступним кључевима, па сервер ради само "
+"док је :ref:`Приступ путем кључа <system-api-token-access>` укључен. Клијент "
+"може да ради тачно оно што смеју кључ и његов власник, ништа више: сваки "
+"алат захтева дозволу ``ticket.agent``. Корисници без дозвола оператера, као "
+"што су клијенти, не добијају никакве алате. Погледајте :user-"
+"docs:`корисничку документацију </extras/mcp-server.html>` да бисте сазнали "
+"како корисник повезује клијент."
 
 #: ../system/api.rst:123
-#, fuzzy
-#| msgid ""
-#| "The example shown next to the toggle uses the **Fully Qualified Domain "
-#| "Name** and the **HTTP type** from Zammad's :doc:`Base settings </settings/"
-#| "system/base>`."
 msgid ""
 "When the toggle is on, the page shows the address of the server and an "
 "example for connecting a client. Both use the **Fully Qualified Domain "
 "Name** and the **HTTP type** from Zammad's :doc:`Base settings </settings/"
 "system/base>`."
 msgstr ""
-"Пример приказан поред прекидача користи **квалификовано назив домена** и "
-"**HTTP протокол** из Zammad-ових :doc:`основних подешавања </settings/system/"
-"base>`."
+"Када је прекидач укључен, страница приказује адресу сервера и пример за "
+"повезивање клијента. И адреса и пример користе **Квалификовани назив "
+"домена** и **HTTP протокол** из Zammad-ових :doc:`основних подешавања </"
+"settings/system/base>`."
 
 #: ../system/api.rst:127
 msgid ""
@@ -29354,6 +29394,11 @@ msgid ""
 "fail, and browser requests from other origins are refused to protect the "
 "server against DNS rebinding."
 msgstr ""
+"Zammad одговара само када је захтев упућен на **Квалификовани назив "
+"домена**, **Алтернативни квалификовани назив домена** или на повратну адресу "
+"(``localhost``, ``127.0.0.1``, ``::1``). Захтеви упућени на другу адресу не "
+"успевају, а захтеви из претраживача са другог порекла (origin) одбијају се "
+"како би се сервер заштитио од DNS rebinding напада."
 
 #: ../system/api.rst:133
 msgid ""
@@ -29364,6 +29409,12 @@ msgid ""
 "approval sends nothing, and the client can then offer to save the text as "
 "the ticket's shared draft."
 msgstr ""
+"Где AI клијент то може да прикаже, Zammad тражи од корисника да одобри "
+"поруку пре него што она стигне до клијента. Захтев приказује цео текст, "
+"примаоце и видљивост (form elicitation, почев од MCP ревизије 2026-07-28), а "
+"Zammad шаље поруку тек када је корисник ту прихвати. Ако корисник одбије "
+"одобрење, ништа се не шаље, а AI клијент тада може да понуди да текст сачува "
+"као заједнички нацрт тикета."
 
 #: ../system/api.rst:139
 msgid ""
@@ -29376,6 +29427,13 @@ msgid ""
 "enabled in the client, because a client that runs them without a prompt "
 "sends a message without any further question."
 msgstr ""
+"AI клијент који не може да прикаже формулар ослања се на сопствено "
+"одобравање позива алата, јер измена преко REST API-ја истим кључем пролази "
+"без додатног одобрења. Код две измене корисниково „да” у разговору замењује "
+"формулар: Zammad замењује заједнички нацрт који већ постоји и затвара тикет "
+"са недовршеним списком задатака тек пошто је AI клијент питао, а корисник "
+"пристао. Држите одобравање позива алата укљученим у AI клијенту, јер клијент "
+"који их покреће без упита шаље поруку без икаквог додатног питања."
 
 #: ../system/api.rst:147
 msgid ""
@@ -29384,22 +29442,16 @@ msgid ""
 "the access of each tool and the limits that apply, is part of the system "
 "documentation: :docs:`MCP tool reference </api/mcp.html>`."
 msgstr ""
+"AI клијент ради са алатима за читање и измену тикета, за претрагу, као и за "
+"заједничке нацрте и чланке базе знања. Комплетна листа, са приступом сваког "
+"алата и ограничењима која важе, део је системске документације: "
+":docs:`Референца MCP алата </api/mcp.html>`."
 
 #: ../system/api.rst:153
-#, fuzzy
-#| msgid "OAuth Setup"
 msgid "OAuth"
-msgstr "OAuth подешавање"
+msgstr "OAuth"
 
 #: ../system/api.rst:155
-#, fuzzy
-#| msgid ""
-#| "The lower part of the page manages OAuth applications. An OAuth "
-#| "application is any external software that wants to work with your Zammad "
-#| "data on behalf of a user, e.g. a reporting tool or an integration you "
-#| "develop yourself. Zammad acts as OAuth provider for it: the user logs "
-#| "into Zammad once and authorizes the application, which then works with "
-#| "the REST API as that user and with their permissions."
 msgid ""
 "The second tab of the page is named *OAuth*. An OAuth application is any "
 "external software that wants to work with your Zammad data on behalf of a "
@@ -29408,12 +29460,12 @@ msgid ""
 "the application, which then works with the REST API as that user and with "
 "their permissions."
 msgstr ""
-"Доњи део странице омогућава управљање OAuth апликацијама. OAuth апликације "
-"је било који екстерни софтвер који жели да ради са вашим Zammad подацима у "
-"име корисника, нпр. алат за извештаје или интеграција коју сами развијате. "
-"Zammad се понаша као OAuth провајдер: корисник се пријављује у Zammad и "
-"ауторизује апликацију, која онда ради преко REST API у име тог корисника и "
-"са његовим дозволама."
+"Други језичак странице зове се *OAuth*. OAuth апликација је било који "
+"екстерни софтвер који жели да ради са вашим Zammad подацима у име корисника, "
+"нпр. алат за извештаје или интеграција коју сами развијате. Zammad за њу има "
+"улогу OAuth провајдера: корисник се једном пријављује у Zammad и ауторизује "
+"апликацију, која онда ради преко REST API-ја у име тог корисника и са "
+"његовим дозволама."
 
 #: ../system/api.rst:162
 msgid ""
@@ -29489,12 +29541,6 @@ msgstr ""
 "Zammad ће га приказати у дијалогу."
 
 #: ../system/api.rst:192
-#, fuzzy
-#| msgid ""
-#| "Creating an application does not grant it any access. A user still has to "
-#| "authorize the application once, or you generate an access token with the "
-#| "**Token** action. The bottom of the page lists the two URLs of your "
-#| "instance that an application uses during the authorization:"
 msgid ""
 "Creating an application does not grant it any access. A user still has to "
 "authorize the application once, or you generate an access token with the "
@@ -29502,20 +29548,19 @@ msgid ""
 msgstr ""
 "Додавање апликације јој не омогућава никакав приступ. Корисник и даље мора "
 "једном да одобри апликацији приступ, или ви да генеришете приступни кључ "
-"помоћу радње **Кључ**. При дну странице наведене су две URL адресе ваше "
-"инстанце које апликација користи током ауторизације:"
+"помоћу радње **Кључ**."
 
 #: ../system/api.rst:197
-#, fuzzy
-#| msgid "``Authorization``"
 msgid "Authorization URLs"
-msgstr "``Authorization``"
+msgstr "URL адресе за ауторизацију"
 
 #: ../system/api.rst:199
 msgid ""
 "The bottom of the tab lists the two URLs of your instance that an "
 "application uses during the authorization:"
 msgstr ""
+"На дну језичка наведене су две URL адресе ваше инстанце које апликација "
+"користи током ауторизације:"
 
 #: ../system/api.rst:202
 msgid ""
@@ -35650,13 +35695,6 @@ msgstr ""
 "потенцијалне проблеме."
 
 #: ../system/monitoring.rst:11
-#, fuzzy
-#| msgid ""
-#| "On the monitoring page, you can see the current health state of Zammad "
-#| "under **Current Status** at the bottom. This can be useful if you want to "
-#| "have a look if everything is up and running. As an example, you could "
-#| "have a look in the monitoring when you assume that some emails aren't "
-#| "processed from Zammad."
 msgid ""
 "On the monitoring page, you can see the current health state of Zammad under "
 "**Current Status** at the bottom. This can be useful if you want to have a "
@@ -35668,8 +35706,11 @@ msgid ""
 msgstr ""
 "На страни за надгледање можете видети тренутно стање Zammad-а под **Тренутно "
 "стање** при дну. Ово може бити корисно ако желите да проверите да ли је све "
-"у реду. Као пример, могли бисте да проверите надгледање када претпоставите "
-"да се неке имејл поруке не обрађују од стране Zammad-а."
+"у реду. На пример, надгледање пријављује имејл канал који не може да се "
+"повеже са својим имејл сервером или канал који није преузео имејл поруке "
+"дуже од сат времена. Имејл поруке које не могу да се обраде нису део тога. "
+"Zammad уместо тога отвара тикет са насловом ``Имејл порука која се не може "
+"обрадити``, погледајте :doc:`/misc/unprocessable-emails`."
 
 #: ../system/monitoring.rst:20
 msgid "Monitoring API"
