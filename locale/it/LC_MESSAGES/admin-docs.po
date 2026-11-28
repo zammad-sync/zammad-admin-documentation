@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Zammad\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-31 15:40+0200\n"
-"PO-Revision-Date: 2026-09-26 10:12+0000\n"
-"Last-Translator: Silke Jänichen <silke.jaenichen@posteo.de>\n"
+"PO-Revision-Date: 2026-11-28 15:12+0000\n"
+"Last-Translator: albanobattistella <albanobattistella@gmail.com>\n"
 "Language-Team: Italian <https://translations.zammad.org/projects/"
 "documentations/admin-documentation-pre-release/it/>\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.1\n"
+"X-Generator: Weblate 2026.11.1\n"
 
 #: ../ai/ai-agents.rst:2
 msgid "AI Agents"
@@ -2683,7 +2683,7 @@ msgstr ""
 "personalizzati, dai un'occhiata a :doc:`come aggiungerli a Zammad </settings/"
 "security/ssl-certificates>`."
 
-#: ../includes/ssl-verification-warning.rst:4
+#: ../includes/ssl-verification-warning.rst:2
 msgid ""
 "Please be aware that **turning off SSL verification is a security risk**. It "
 "should only be used temporarily or for testing purposes. If turned off, "
@@ -7708,7 +7708,7 @@ msgstr ""
 "Collega un account Microsoft 365 (precedentemente \"Office 365\") a Zammad "
 "tramite API Graph."
 
-#: ../includes/m365-imap-graph.rst:4
+#: ../includes/m365-imap-graph.rst:2
 msgid ""
 "What is the difference between the :doc:`Graph-API- </channels/microsoft365-"
 "graph/index>` and :doc:`IMAP-based M365 channel </channels/microsoft365/"
@@ -7718,12 +7718,12 @@ msgstr ""
 "microsoft365-graph/index>` e il :doc:`canale M365 basato su IMAP </channels/"
 "microsoft365/index>`?"
 
-#: ../includes/m365-imap-graph.rst:8
+#: ../includes/m365-imap-graph.rst:6
 msgid "The Graph-API variant has some advantages over the IMAP-based channel:"
 msgstr ""
 "La variante API Graph ha alcuni vantaggi rispetto al canale basato su IMAP:"
 
-#: ../includes/m365-imap-graph.rst:10
+#: ../includes/m365-imap-graph.rst:8
 msgid ""
 "Shared mailboxes are implemented in a better way. By using them, you can "
 "save some license costs."
@@ -7731,7 +7731,7 @@ msgstr ""
 "Le caselle condivise sono implementate in modo migliore. Usandole, puoi "
 "risparmiare sui costi delle licenze."
 
-#: ../includes/m365-imap-graph.rst:12
+#: ../includes/m365-imap-graph.rst:10
 msgid ""
 "The selection of an inbox folder is implemented with a tree-select field in "
 "Zammad. So you can choose a folder from the fetched folder list, which is "
@@ -7741,16 +7741,16 @@ msgstr ""
 "campo di selezione ad albero in Zammad. Quindi puoi scegliere una cartella "
 "dall'elenco delle cartelle recuperate, il che è molto meno soggetto a errori."
 
-#: ../includes/m365-imap-graph.rst:15
+#: ../includes/m365-imap-graph.rst:13
 msgid "It is the future-proof way of connecting to your M365 environment."
 msgstr ""
 "È il modo più sicuro per il futuro per connettersi al tuo ambiente M365."
 
-#: ../includes/m365-imap-graph.rst:16
+#: ../includes/m365-imap-graph.rst:14
 msgid "It is more secure and scalable and offers a unified endpoint."
 msgstr "È più sicuro e scalabile e offre un endpoint unificato."
 
-#: ../includes/m365-imap-graph.rst:18
+#: ../includes/m365-imap-graph.rst:16
 msgid ""
 "However, there is also a known issue for the Graph-based M365 channel which "
 "is caused by Microsoft: it can happen that the ``From:`` header in outgoing "
@@ -25865,14 +25865,16 @@ msgstr ""
 "**collegamento automatico account al primo accesso**"
 
 #: ../settings/security/third-party.rst:50
-msgid "No User Creation on Logon"
+#, fuzzy
+#| msgid "No User Creation on Logon"
+msgid "Skip User Creation on Logon"
 msgstr "Nessuna creazione utente al login"
 
 #: ../settings/security/third-party.rst:52
 msgid ""
 "By default, Zammad creates a new user account when a user logs in via a "
 "third-party application for the first time and no matching account exists. "
-"To prevent this, set **No user creation on logon** to ``yes``. Zammad then "
+"To prevent this, set **Skip user creation on logon** to ``yes``. Zammad then "
 "refuses such logins with the message *The user account does not exist. "
 "Please contact your administrator.* To allow logins only for existing "
 "accounts, enable this setting together with **Automatic account link on "
@@ -26965,7 +26967,7 @@ msgstr ""
 msgid ""
 "If one of these conditions is not met, Zammad refuses to link the accounts "
 "and the sign-in fails with an error message: either that the email address "
-"is already in use by another user, or, if **No user creation on logon** is "
+"is already in use by another user, or, if **Skip user creation on logon** is "
 "enabled, that the user account does not exist. Affected users can still get "
 "access: they log in to their existing Zammad account by other means and link "
 "their Microsoft account themselves under *Profile > Linked Accounts*."
@@ -30143,10 +30145,8 @@ msgid ""
 msgstr ""
 
 #: ../system/api.rst:104
-#, fuzzy
-#| msgid "Video Servers"
 msgid "MCP Server"
-msgstr "Server video"
+msgstr "Server MCP"
 
 #: ../system/api.rst:106
 msgid ""
